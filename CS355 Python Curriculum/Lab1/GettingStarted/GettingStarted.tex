@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{times}
+\usepackage{listings}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage{comment}
+\usepackage{pdfsync}
+
+\widowpenalty=10000
+
+\title{\vspace{-0.5in}CS 355: Getting Started}
+
+\newif\ifinstructor
+\instructorfalse
+%\date{\vspace{-0.5in}Last updated on August 11, 2017}
+\date{\vspace{-0.25in}}
+
+\begin{document}
+\maketitle
+
+% symbol definition
+\newcommand{\mat}[1]{\mathbf #1}
+\renewcommand{\vec}[1]{\mathbf #1}
+\newcommand{\x}{\vec{x}}
+\newcommand{\y}{\vec{y}}
+\newcommand{\p}{\vec{p}}
+\renewcommand{\c}{\vec{c}}
+
+% other helpful macros
+\newcommand{\note}[1]{\textcolor{red}{NOTE: #1}}
+\newcommand{\divider}{\bigskip ~ \hrule}
+
+\vspace{-0.5in}
+
+\ifinstructor
+Time to complete: approximately 20 minutes
+\fi
+
+\section*{Overview}
+
+Welcome to CS 355. In this class, we will be working with the inner workings of graphics systems, including the matrix math that makes it all possible. For this reason, we will be using the Python programming language (specifically Python 2.7). Python is a language designed with many science and math concepts in mind. We hope you will find it useful for this class and for your future work in computer science.
+
+\divider
+
+\section*{Anaconda}
+
+For this class, the easiest way to setup Python and get all the packages you need will be to install Anaconda on your machine. Anaconda provides a virtual environment for you with preconfigured packages. This guarantees that everything will work smoothly for you. To get Anaconda on your machine:
+
+\begin{enumerate}
+    \item   Go to www.continuum.io/downloads and click download Python 2.7 Version
+    \item   Run the install executable or package. In Windows, we recommend checking the "Add to Path" option in the installer.
+    \item   Run the  Windows command line or Unix terminal.
+    \item   Run the following lines of code:
+
+    \begin{lstlisting}[language=bash]
+        $ conda create --name cs355env
+        $ activate cs355env (or source activate cs355env on Unix)
+        $ conda install numpy
+        $ conda install scipy
+        $ conda install matplotlib
+        $ conda install pil
+        $ conda install jupyter
+        $ pip install pygame
+    \end{lstlisting}
+
+
+    \item   On Mac or Linux machines, run
+
+    \begin{lstlisting}[language=bash]
+        $ conda install pyopengl
+        $ conda install pyopengl-accelerate
+    \end{lstlisting}
+
+    On Windows, you will need to download a current build for PyOpenGL and PyOpenGL-accelerate at \text{http://www.lfd.uci.edu/\~gohlke/pythonlibs/\#pyopengl}, then run
+    \begin{lstlisting}[language=bash]
+        $ pip install pyopengl_version.whl
+        $ pip install pyopengl_accelerate_version.whl
+    \end{lstlisting}
+
+\end{enumerate}
+
+You now have all the packages you need for the class. You can run this virtual environment anytime by simply running:
+
+\[
+	\mbox{\tt activate cs355env}
+\]
+
+or on Unix systems,
+
+\[
+	\mbox{\tt source activate cs355env}
+\]
+
+\divider
+
+\section*{Lab Machines}
+
+If you decide to work primarily on lab machines, you do not need to install Anaconda. We have configured a virtual environment that you can run that has all needed packages installed. To activate this environment, run
+
+\[
+	\mbox{\tt source activate /ta/355/notrealyet}
+\]
+
+
+\divider
+
+\section*{Jupyter Notebooks}
+
+Many of the labs (including the first) are Jupyter notebooks. These files end with the .ipynb extension. To run these files:
+
+\begin{enumerate}
+    \item   Run the  Windows command line or Unix terminal.
+    \item   Activate the CS355 environment.
+    \item   Navigate to the location of the notebook.
+    \item   Run \textit{jupyter notebook}
+    \item   In the webpage that opens, click on the file.
+\end{enumerate}
+
+You will receive more instructions in the notebook itself once you open it.
+
+\divider
+
+%\section*{Change Log}
+
+%\begin{itemize}
+%	\item	August 11: Initial version for Fall 2017.
+%\end{itemize}
+
+\ifinstructor
+
+
+
+\fi
+
+\end{document} 

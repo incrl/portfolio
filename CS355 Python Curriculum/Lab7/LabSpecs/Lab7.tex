@@ -1,0 +1,148 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{times}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage{comment}
+\usepackage{pdfsync}
+
+\widowpenalty=10000
+
+\title{\vspace{-0.5in}CS 355 Lab \#7: Implementing 3D Perspective}
+
+\newif\ifinstructor
+\instructorfalse
+%\date{\vspace{-0.5in}Last updated on August 20, 2014}
+\date{\vspace{-0.25in}}
+
+\begin{document}
+\maketitle
+
+% symbol definition
+\newcommand{\mat}[1]{\mathbf #1}
+\renewcommand{\vec}[1]{\mathbf #1}
+\newcommand{\x}{\vec{x}}
+\newcommand{\y}{\vec{y}}
+\newcommand{\p}{\vec{p}}
+\renewcommand{\c}{\vec{c}}
+
+% other helpful macros
+\newcommand{\note}[1]{\textcolor{red}{NOTE: #1}}
+\newcommand{\divider}{\bigskip ~ \hrule}
+
+\vspace{-0.5in}
+
+\ifinstructor
+Time to complete: 1 week ramp-up plus 1 week to actually do.
+\fi
+
+\section*{Overview}
+
+Now that you're familiar with the basic pipeline for 3D geometry, it's time to do it yourself. In this lab, you will implement the world-to-camera, projection, and viewport transformations that OpenGL did for you in the last lab.
+
+We will be using a package called Pygame, which will allow us to create a viewing window and draw lines on the screen. As before, you will be given a static model of the house, car, and tire that you may use.
+
+The goal of this lab is to implement all of the functionality of Labs \#5 and \#6 using your own transformation matrices.
+
+\divider
+
+\section*{User Interface}
+
+The user interface is identical to the interface introduced in Lab \#5. However, this lab will omit orthographic projection, so you may also omit responding to the "o" and "p" keys.
+
+\divider
+
+\section*{Implementation Notes}
+
+Now that we are not using OpenGL, there are a few ideas that you will need to consider when implementing your code. It will be helpful to think in terms of a model-view-controller framework.
+
+\subsection*{Model}
+
+For this lab, the 3D "model" is static. We have provided the same house, car, and tire models that you saw in Lab \#6. However, there models are described in our own {\tt Line3D} and {\tt Point3D} classes and stored in a simple array. It will be your job to figure how to effectively tell Pygame to draw these lines after they have gone through the proper transformations.
+
+\subsection*{Controller}
+
+Because we are using a Pygame window for display, we will also need to use Pygame's keyboard listener code. A sample is provided in the lab file. You will need to implement the same camera movements as in Lab \#5. Note that OpenGL handles the z-direction in a unique way, so some of your movement code might make you move in the opposite direction than that which is intended. Adjust your code as needed to fit the original specs.
+
+\subsection*{View}
+
+This part is the real heart of the lab. You should render the 3D model by using 2D line-drawing commands after first determining the projected 2D locations of each 3D line's endpoints. You should determine these projected 2D locations by implementing each of the pipeline stages we've talked about:
+
+\begin{itemize}
+    \item Convert the 3D $(X,Y,Z)$ coordinates to 4-element $(X,Y,Z,1)$ homogenouse coordinates.
+    \item Build a \textit{single matrix} that converts from world to camera coordinates. As you did in Lab \#5, this is the result of concatenating a translation matrix and a rotation matrix. \textit{It is highly recommended that you use Numpy for storing and working with these matrices.}
+    \item Apply this matrix to the 3D homogeneous world-space point to get a 3D homogeneous camera-space point.
+    \item Build a clip matrix as discussed in class. Pick appropriate parameters for the $zoom_x$, $zoom_y$, near plane distance $n$, and far plane distance $f$.
+    \item Apply this clip matrix to the 3D homogenous camera-space point to get 3D homogenous points in clip space.
+    \item Apply the clipping tests described in class. Reject a line if \textit{both} points fail the same view frustrum test \textbf{OR} if \textit{either} endpoint fails the near plane test.
+    \item Apply perspective by normalizing the 3D homogeneous clip-space coordinate to get the $(x/w, y/w)$ location of the point in canonical screen space.
+    \item Apply a viewport transformation to map the canonical screen space to the actual screen space $(512 x 512)$.
+    \item Draw the line on the screen.
+
+\end{itemize}
+
+\divider
+
+\section*{Scene}
+
+To receive full credit, you must render a street of houses and at least one car with tires located in the appropriate places. The location of the houses and car do not matter as long as the TAs are able to navigate the street easily and see that you are able to apply both translation and rotation matrices appropriately.
+
+\begin{figure}[hbt!]
+	\begin{center}
+		\includegraphics[width=3.0in]{street.png}
+	\end{center}
+	\caption{Possible Street Design}
+	\label{fig:street}
+\end{figure}
+
+\divider
+
+\section*{Extra Credit}
+
+To receive extra credit, you can reimplement the animation of the car moving with the tires rotating as you did in Lab \#6. This will require you to understand Pygame's clock functionality which you can find more information about at https://www.pygame.org/docs/ref/time.html.
+
+\divider
+
+\section*{Submitting Your Lab}
+
+Your code should be contained inside a single .py file. To submit the lab, simply submit this file through Learning Suite. If for some reason you used multiple files, zip these files together before submission. If you need to add any special instruction, you can add them there in the notes when you submit.
+
+\divider
+
+\section*{Rubric}
+
+\begin{itemize}
+	\item	Correct rendering of the wireframe house with perspective (40 points)
+    \item   Correct navigation relative to current position and orientation (10 points
+    \item   Correct clipping (10 points)
+    \item   Correct rendering of multiple houses along street (20 points)
+    \item   Correct rendering of a car along street (10 points)
+    \item   Generally correct behavior otherwise (10 points)
+    \item   Extra Credit: Render a car that drives down the road (15 points)	
+
+TOTAL: 100 points  (115 with extra credit)
+
+\end{itemize}
+
+%\section*{Change Log}
+
+%\begin{itemize}
+%	\item	August 12: Initial version for Fall 2015.
+%\end{itemize}
+
+\ifinstructor
+
+\divider
+
+\section*{Concepts}
+
+Besides laying the foundation for the upcoming labs, this assignment should reinforce the following concepts:
+\begin{itemize}
+	\item	3D Transformation Geometry Pipeline
+\end{itemize}
+
+\fi
+
+\end{document} 

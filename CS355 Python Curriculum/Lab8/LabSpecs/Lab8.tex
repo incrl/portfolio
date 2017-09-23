@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{times}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage{comment}
+\usepackage{pdfsync}
+
+\widowpenalty=10000
+
+\title{\vspace{-0.5in}CS 355 Lab \#8: 3D Lighting}
+
+\newif\ifinstructor
+\instructorfalse
+%\date{\vspace{-0.5in}Last updated on August 20, 2014}
+\date{\vspace{-0.25in}}
+
+\begin{document}
+\maketitle
+
+% symbol definition
+\newcommand{\mat}[1]{\mathbf #1}
+\renewcommand{\vec}[1]{\mathbf #1}
+\newcommand{\x}{\vec{x}}
+\newcommand{\y}{\vec{y}}
+\newcommand{\p}{\vec{p}}
+\renewcommand{\c}{\vec{c}}
+
+% other helpful macros
+\newcommand{\note}[1]{\textcolor{red}{NOTE: #1}}
+\newcommand{\divider}{\bigskip ~ \hrule}
+
+\vspace{-0.5in}
+
+\ifinstructor
+Time to complete: 1 week ramp-up plus 1 week to actually do.
+\fi
+
+\section*{Overview}
+
+In this lab, you will implement a simple 3D lighting program. 
+
+\divider
+
+\section*{User Interface}
+
+Your only interaction will be through the keyboard. Pressing the keyboard will change the perceived location of light. The light will rotate around the sphere. The following keys should rotate the light in the following ways:
+
+\begin{figure}[!hbt]
+	\begin{center}
+		\includegraphics[width=2in]{keys.png}
+	\end{center}
+	\label{fig:screenshot}
+\end{figure}
+
+\divider
+
+\section*{Implementation Notes}
+
+All of the 3D geometry and projection is provided for you in this lab. Again, we are using the Pygame package to do this. Make sure to include the basicShapes.pyc and wireframe.pyc files in the same directory as your code. It will not run without them.
+
+If the lab file is setup correctly, when you run the code, you should see a very faint beach ball displayed in a window. The ambient light portion of the lab is done for you, but you will need to implement the diffuse and specular reflections from the Phong model.
+
+The code provides the viewing vector and the incoming light vector. However, you will need to calculate the reflection vector for specular lighting. The reflection vector can be calculated as
+
+$$ r = l - 2(l \cdot n) n $$
+
+\noindent where $r$ is the reflection vector, $l$ is the incoming light vector, and $n$ is the normal to the surface at that point.
+
+\section*{Submitting Your Lab}
+
+Your code should be contained inside a single .py file. To submit the lab, simply submit this file through Learning Suite. \textbf{You do not need to include the wireframe.pyc and basicShapes.pyc files with your submission.} If you need to add any special instruction, you can add them there in the notes when you submit.
+
+\divider
+
+\section*{Rubric}
+
+\begin{itemize}
+	\item	Correct rendering of diffuse reflection (20 points)
+    \item   Correct rendering of specular reflection (20 points)
+    \item   Correct navigation of light source (20 points)
+    \item   Generally correct behavior otherwise (10 points)
+
+TOTAL: 70 points
+
+\end{itemize}
+
+
+%\section*{Change Log}
+
+%\begin{itemize}
+%	\item	August 12: Initial version for Fall 2015.
+%\end{itemize}
+
+\ifinstructor
+
+\divider
+
+\section*{Concepts}
+
+Besides laying the foundation for the upcoming labs, this assignment should reinforce the following concepts:
+\begin{itemize}
+	\item	Basic GUI interaction (you should have seen this in CS 240)
+	\item	Model-view-controller architecture (you should have also seen this in CS 240)
+	\item Simple 2D geometry
+\end{itemize}
+
+\fi
+
+\end{document} 

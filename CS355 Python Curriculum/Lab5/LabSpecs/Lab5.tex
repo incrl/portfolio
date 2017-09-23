@@ -1,0 +1,138 @@
+\documentclass[11pt]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{times}
+\usepackage{fullpage}
+\usepackage{color}
+\usepackage{comment}
+\usepackage{pdfsync}
+
+\widowpenalty=10000
+
+\title{\vspace{-0.5in}CS 355 Lab \#5: 3D Graphics with OpenGL}
+
+\newif\ifinstructor
+\instructorfalse
+%\date{\vspace{-0.5in}Last updated on August 10, 2017}
+\date{\vspace{-0.25in}}
+
+\begin{document}
+\maketitle
+
+% symbol definition
+\newcommand{\mat}[1]{\mathbf #1}
+\renewcommand{\vec}[1]{\mathbf #1}
+\newcommand{\x}{\vec{x}}
+\newcommand{\y}{\vec{y}}
+\newcommand{\p}{\vec{p}}
+\renewcommand{\c}{\vec{c}}
+
+% other helpful macros
+\newcommand{\note}[1]{\textcolor{red}{NOTE: #1}}
+\newcommand{\divider}{\bigskip ~ \hrule}
+
+\vspace{-0.5in}
+
+\ifinstructor
+Time to complete: 1 week ramp-up plus 1 week to actually do.
+\fi
+
+\section*{Overview}
+
+This lab introduces you to simple 3D graphics by having you set up the world-to-camera, projection (perspective or orthographic), and viewport transformations. In this lab, we will not use Jupyter notebooks. Rather, we will use command line Python to make a viewing window and the OpenGL package to do rendering.
+
+OpenGL was originally in C, so you'll find the design is straight imperative (i.e. commands) rather than object-oriented. It also doesn't involve GUIs directly, though there have been GUI libraries written for it. You won't have event listeners but will instead poll the keyboard to see if keys are pressed.
+
+In this lab, you will move around a \textit{very} simple virtual world that consists of a wireframe model of a small house. (If you wish, you can play around with the model to render other scenes.) In this world, you can turn left or right in the $xz$ plane of the world; move up or down in the $y$ direction, or move forward, backward, left, or right \textit{relative to the direction you are currently facing}. You should be able to switch the projection between perspective and orthographic.
+
+When moving, you should move one unit in the world coordinates \textit{relative to the direction you are currently facing}. When turning, you should turn one degree left or right.
+
+\divider
+
+\section*{User Interface}
+
+Your only interaction will be through the keyboard. Each of the following keys should perform the corresponding actions.
+
+\begin{figure}[!hbt]
+	\begin{center}
+		\includegraphics[width=4in]{keys.png}
+	\end{center}
+	\label{fig:screenshot}
+\end{figure}
+
+
+\section*{Downloading OpenGL}
+
+You should already have OpenGL installed on your machine if you followed the \textbf{Getting Started} instructions for the first lab. If you still need the package, follow the directions below.
+
+On Mac or Linux machines, run
+
+\begin{lstlisting}[language=bash]
+    $ conda install pyopengl
+    $ conda install pyopengl-accelerate
+\end{lstlisting}
+
+On Windows, you will need to download a current build for PyOpenGL and PyOpenGL-accelerate at \text{http://www.lfd.uci.edu/~gohlke/pythonlibs/\#pyopengl}, then run
+\begin{lstlisting}[language=bash]
+    $ pip install pyopengL_version.whl
+    $ pip install pyopengL_accelerate_version.whl
+\end{lstlisting}
+
+To test if you have correctly installed OpenGL, simply run the lab file that is given. It should pop up with a black window display with nothing drawn in it. This is where you will do your rendering.
+
+\section*{Implementation Notes}
+
+You are given a shell file for this program that takes care of some of the initial setup for OpenGL. This should allow you to foucs on rendering. 
+
+For this lab, the "model" in the model-view-controller sense is static. We provide a {\tt drawHouse()} function that provides the location of the lines that draw the house. However, this function is useless without a definition of the rendering transformations needed to display it. You will need to implement these transformations using OpenGL commands.
+
+You'll notice at the top of the file that the TA has explicitly imported the OpenGL commands you'll actually need for this lab. There's a \textit{lot} more to OpenGL than what we're using, so let this import help guide you in what commands to use.
+
+If you don't know how to use a particular command or what parameters are, go find the documentation on the internet. (It's not hard to find.)
+
+A good place to start is http://www.glprogramming.com/red/index.html. Chapter 3 contains most of what you need to know for this lab.
+
+\section*{Submitting Your Lab}
+
+Your code should be contained inside a single .py file. To submit the lab, simply submit this file through Learning Suite. If for some reason you used multiple files, zip these files together before submission. If you need to add any special instruction, you can add them there in the notes when you submit.
+
+\divider
+
+\section*{Rubric}
+
+This is tentative and may be adjusted up to or during grading, but it should give you a rough breakdown for partial credit. Please be aware that it may be hard to see enough to get partial credit unless a reasonable amount of the lab is complete.
+
+\begin{itemize}
+	\item	Correct perspective projection (30 points)
+    \item   Correct orthographic projection (20 points)
+    \item   Correct camera movement (30 points)
+    \item   Generally correct behavior otherwise (20 points)
+	
+TOTAL: 100 points
+
+\end{itemize}
+
+%\section*{Change Log}
+
+%\begin{itemize}
+%	\item	August 12: Initial version for Fall 2015.
+%\end{itemize}
+
+\ifinstructor
+
+\divider
+
+\section*{Concepts}
+
+Besides laying the foundation for the upcoming labs, this assignment should reinforce the following concepts:
+\begin{itemize}
+	\item	How to use the OpenGL library
+	\item	Transformations in 3D
+	\item   Movement in 3D space
+\end{itemize}
+
+\fi
+
+\end{document} 
