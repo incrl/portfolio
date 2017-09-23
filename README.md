@@ -3,7 +3,7 @@ A public repository showing my best work in computer science.
 
 ## Acoustics Research
 
-This is some of the code I used when I worked in with Dr. Tracianne Neilsen and Dr. Kent Gee 
+This is some of the code I used when I worked with Dr. Tracianne Neilsen and Dr. Kent Gee 
 on jet noise research. My part of the project was to build a computational model that simulated
 the jet noise and optimized to match our sound measurements around the jet. I used Matlab to
 build the simulation and process the data. For more information, see my published [JASA article](http://asa.scitation.org/doi/abs/10.1121/1.4806567).
@@ -35,4 +35,4 @@ approval to share I will put in this folder.
 ## Other Interesting Code
 
 This last folder is just a place for other fun and interesting projects I have done. Most weren't for a class,
-mostly just for my own curiosity.
+just out of my own curiosity.
