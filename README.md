@@ -6,7 +6,7 @@ A public repository showing my best work in computer science.
 This is some of the code I used when I worked in with Dr. Tracianne Neilsen and Dr. Kent Gee 
 on jet noise research. My part of the project was to build a computational model that simulated
 the jet noise and optimized to match our sound measurements around the jet. I used Matlab to
-build the simulation and process the data. For more information, see my published [JASA article].(http://asa.scitation.org/doi/abs/10.1121/1.4806567)
+build the simulation and process the data. For more information, see my published [JASA article](http://asa.scitation.org/doi/abs/10.1121/1.4806567).
 
 For proprietary reasons, the data set is not included.
 
@@ -28,8 +28,8 @@ we used to setup the lab specs.
 ## Lightfield Research
 
 As stated above, I am working with Dr. Morse on image processing research. Specifically, I am currently
-working on using deep learning programs like TensorFlow on lightfield images to perform more advanced
-depth aware image effects. This is my current research, so I can't share everything, but anything I have
+working on advanced depth aware effects on lightfield images. We are doing this by using deep learning programs like TensorFlow.
+ This is my current research, so I can't share everything, but anything I have
 approval to share I will put in this folder.
 
 ## Other Interesting Code
