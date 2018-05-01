@@ -36,3 +36,9 @@ approval to share I will put in this folder.
 
 This last folder is just a place for other fun and interesting projects I have done. Most weren't for a class,
 just out of my own curiosity.
+
+## Raytracer and Pathtracer
+
+This is my project code for my advanced graphics class (CS655). It started out as a raytracer and grew into a path tracer.
+Since it is project code, it is a little messy, but it represents many hours of work that I am proud of.
+I also included example output images for convenience. 

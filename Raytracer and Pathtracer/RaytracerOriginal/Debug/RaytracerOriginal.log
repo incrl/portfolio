@@ -1,0 +1,7 @@
+﻿  RaytracerOriginal.cpp
+c:\users\david\documents\visual studio 2015\projects\raytraceroriginal\raytraceroriginal\raytraceroriginal.cpp(310): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\david\documents\visual studio 2015\projects\raytraceroriginal\raytraceroriginal\raytraceroriginal.cpp(311): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\david\documents\visual studio 2015\projects\raytraceroriginal\raytraceroriginal\raytraceroriginal.cpp(312): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+c:\users\david\documents\visual studio 2015\projects\raytraceroriginal\raytraceroriginal\raytraceroriginal.cpp(313): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  RaytracerOriginal.vcxproj -> C:\Users\david\Documents\Visual Studio 2015\Projects\RaytracerOriginal\Debug\RaytracerOriginal.exe
+  RaytracerOriginal.vcxproj -> C:\Users\david\Documents\Visual Studio 2015\Projects\RaytracerOriginal\Debug\RaytracerOriginal.pdb (Full PDB)
