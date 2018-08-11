@@ -8,7 +8,7 @@ on jet noise research. My part of the project was to build a computational model
 the jet noise and optimized to match our sound measurements around the jet. I used Matlab to
 build the simulation and process the data. For more information, see my published [JASA article](http://asa.scitation.org/doi/abs/10.1121/1.4806567).
 
-![Acoustics Research](/Acoustics Research/Visualization.png?raw=true "Acoustics Research")
+![Acoustics Research](https://github.com/incrl/portfolio/blob/master/Acoustics%20Research/Visualization.png)
 
 For proprietary reasons, the data set is not included.
 
@@ -31,7 +31,7 @@ we used to setup the lab specs.
 
 This is a program that I made for fun to combine many different projects I have done throughout the years into one interface. It includes algorithms such as seam carving, perspective warping using homography, and style transfer using deep neural networks in an easy-to-use GUI. It is all built in Python's native TKinter code.
 
-![David's Photoshop](/David's Photoshop/Visualization.png?raw=true "David's Photoshop")
+![David's Photoshop](https://github.com/incrl/portfolio/blob/master/David's%20Photoshop/Visualization.gif)
 
 ## Lightfield Research
 
@@ -40,9 +40,9 @@ working on advanced depth aware effects on lightfield images. We are doing this 
  This is my current research, so I can't share everything, but anything I have
 approval to share I will put in this folder.
 
-![Light Field Research - Flowers](/Lightfield Research/Sample Style Transfer Images/Flowers/View.png?raw=true "Refocusing Flowers")
+![Light Field Research - Flowers](https://github.com/incrl/portfolio/blob/master/Lightfield%20Research/Sample%20Style%20Transfer%20Images/Flowers/View.png)
 
-![Light Field Research - Swans](/Lightfield Research/Sample Style Transfer Images/Swans/View.png?raw=true "Refocusing Swans")
+![Light Field Research - Swans](https://github.com/incrl/portfolio/blob/master/Lightfield%20Research/Sample%20Style%20Transfer%20Images/Swans/View.png)
 
 ## Other Interesting Code
 
@@ -54,8 +54,8 @@ This is my project code for my advanced graphics class (CS655). It started out a
 Since it is project code, it is a little messy, but it represents many hours of work that I am proud of.
 I also included example output images for convenience. 
 
-![Ray Tracer Example 1](/Raytracer and Pathtracer/Example Outputs/Lab2Example3.png?raw=true "Ray Tracer Example 1")
+![Ray Tracer Example 1](https://github.com/incrl/portfolio/blob/master/Raytracer%20and%20Pathtracer/Example%20Outputs/Lab2Example3.png)
 
-![Ray Tracer Example 1](/Raytracer and Pathtracer/Example Outputs/Lab3Example1.png?raw=true "Ray Tracer Example 2")
+![Ray Tracer Example 1](https://github.com/incrl/portfolio/blob/master/Raytracer%20and%20Pathtracer/Example%20Outputs/Lab3Example1.png)
 
-![Path Tracer Example](/Raytracer and Pathtracer/Example Outputs/Lab4Example2.png?raw=true "Path Tracer Example")
+![Path Tracer Example](https://github.com/incrl/portfolio/blob/master/Raytracer%20and%20Pathtracer/Example%20Outputs/Lab4Example2.png)
