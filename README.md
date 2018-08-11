@@ -25,6 +25,11 @@ processing and matrix operations. He agreed to the idea and I rewrote the course
 This is the currently used curriculum for the CS355 course. I also provided the Latex files that
 we used to setup the lab specs.
 
+## David's Photoshop
+
+This is a program that I made for fun to combine many different projects I have done throughout the years into one interface. It includes algorithms such as seam carving, perspective warping using homography, and style transfer using deep neural networks in an easy to GUI. It is all built in Python's native TKinter code.
+
+
 ## Lightfield Research
 
 As stated above, I am working with Dr. Morse on image processing research. Specifically, I am currently
