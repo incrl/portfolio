@@ -8,6 +8,8 @@ on jet noise research. My part of the project was to build a computational model
 the jet noise and optimized to match our sound measurements around the jet. I used Matlab to
 build the simulation and process the data. For more information, see my published [JASA article](http://asa.scitation.org/doi/abs/10.1121/1.4806567).
 
+![Acoustics Research](/Acoustics Research/Visualization.png?raw=true "Acoustics Research")
+
 For proprietary reasons, the data set is not included.
 
 ## CS355 Java Program
@@ -29,21 +31,31 @@ we used to setup the lab specs.
 
 This is a program that I made for fun to combine many different projects I have done throughout the years into one interface. It includes algorithms such as seam carving, perspective warping using homography, and style transfer using deep neural networks in an easy-to-use GUI. It is all built in Python's native TKinter code.
 
+![David's Photoshop](/David's Photoshop/Visualization.png?raw=true "David's Photoshop")
 
 ## Lightfield Research
 
 As stated above, I am working with Dr. Morse on image processing research. Specifically, I am currently
-working on advanced depth aware effects on lightfield images. We are doing this by using deep learning programs like TensorFlow.
+working on advanced depth aware effects on lightfield images. We are doing this by using deep learning programs like Pytorch. Our current interest is in style transfer of light fields in a consistent manner.
  This is my current research, so I can't share everything, but anything I have
 approval to share I will put in this folder.
 
+![Light Field Research - Flowers](/Lightfield Research/Sample Style Transfer Images/Flowers/View.png?raw=true "Refocusing Flowers")
+
+![Light Field Research - Swans](/Lightfield Research/Sample Style Transfer Images/Swans/View.png?raw=true "Refocusing Swans")
+
 ## Other Interesting Code
 
-This last folder is just a place for other fun and interesting projects I have done. Most weren't for a class,
-just out of my own curiosity.
+This last folder is just a place for other fun and interesting projects I have done. Most weren't for a class, just out of my own curiosity.
 
 ## Raytracer and Pathtracer
 
 This is my project code for my advanced graphics class (CS655). It started out as a raytracer and grew into a path tracer.
 Since it is project code, it is a little messy, but it represents many hours of work that I am proud of.
 I also included example output images for convenience. 
+
+![Ray Tracer Example 1](/Raytracer and Pathtracer/Example Outputs/Lab2Example3.png?raw=true "Ray Tracer Example 1")
+
+![Ray Tracer Example 1](/Raytracer and Pathtracer/Example Outputs/Lab3Example1.png?raw=true "Ray Tracer Example 2")
+
+![Path Tracer Example](/Raytracer and Pathtracer/Example Outputs/Lab4Example2.png?raw=true "Path Tracer Example")
